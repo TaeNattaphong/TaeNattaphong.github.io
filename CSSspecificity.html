@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Specificity</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Itim&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/fontawesome-free-5.10.1-web/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="itimFont">
+        <nav class="navbar navbar-expand navbar-light bg-danger py-0 text-warning">
+            <i class="fab fa-css3-alt fa-4x"></i><p class="navbar-brand text-warning" id="fontSize30px">CSS Specificity</p>
+        </nav>
+        <div class="body py-5">
+            <p class="text-light text-center" id="fontSize90px">CSS Specificity?!</p>
+            <div class="text-center bg-light container p-3" id="fontSize17px">
+                <p>
+                    CSS Sepecificity เป็นค่าบางค่าที่จะบอกให้ browser ไปเลือก selector จากมากไปน้อย 
+                    ถ้ามีค่ามากก็จะถูกเลือกไปใช้ และ CSS ก็เหมือนภาษาการเขียนโปรแกรมอื่น ๆ ที่อ่านโค้ดจาก บน – ล่าง
+                    ดังนั้นถ้าเราเขียน Selector ซ้ำกัน อันล่างจะถูกนำไปใช้ เช่น
+                </p>
+                <div class="col-sm bg-danger">
+                    <p class="m-1 text-light">.test { background-color: blue; }</p>
+                </div>
+                <div class="col-sm bg-danger">
+                    <p class="m-1 text-light">.test { background-color: green; }</p>
+                </div>
+                <div class="col-sm bg-danger">
+                    <p class="m-1 text-light">.test { background-color: red; }</p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-danger p-5">
+            <div class="container text-light">
+                <ul><p id="fontSize30px">วิธีคำนวณค่า CSS Specificity</p> 
+                    <li>1 แบบ Inline style มีค่า specificity = 1000</li>
+                    <li>2 แบบ ID selectors มีค่า specificity = 100</li>
+                    <li>3 แบบ Class selectors, Attributes selectors, Pseudo-classes มีค่า specificity = 10</li>
+                    <li>4 แบบ Type selectors, Pseudo-elements มีค่า specificity = 1</li>
+                    <li>5 แบบ Universal selector, Combinators, Negation pseudo-clas มีค่า specificity = 0</li>
+                </ul>
+                <ul><p id="fontSize30px">ตัวอย่างการคำนวณ</p> 
+                    <li>a { } = 1 คะแนน</li>
+                    <li>.someClass { } = 10 คะแนน</li>
+                    <li>#someId { } = 100 คะแนน</li>
+                    <li>ถ้าเขียน css ใน style เลย = 1000 คะแนน</li>
+                    <li>div a { } = 2 คะแนน (div = 1) + (a = 1)</li>
+                    <li>.test a { } = 11 คะแนน (.test = 10) + (a = 1)</li>
+                    <li>.test a #id { } = 111 คะแนน (.test = 10) + (a = 1) + (#id = 100)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="body text-center text-light p-3">
+            <h6>Source</h6>
+            <div>
+                <a href="https://www.designil.com/css-specificity-and-hack.html">www.designil.com</a>
+            </div>
+            <div>
+                <a href="https://medium.com/@thanuphon18/css-specificity-เรื่องง่ายๆ-ที่หลายคนไม่เคยรู้-f23a0bf5ae87">www.medium.com</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

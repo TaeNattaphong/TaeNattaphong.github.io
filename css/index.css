@@ -1,0 +1,27 @@
+.body {
+    background-color: black;
+}
+
+.colorFooter {
+    background-color: rgb(0, 0, 0);
+}
+
+.itimFont {
+    font-family: 'Itim', cursive;
+}
+
+#fontSize90px {
+    font-size: 90px;
+}
+
+#fontSize40px {
+    font-size: 40px;
+}
+
+#fontSize30px {
+    font-size: 30px;
+}
+
+#fontSize17px {
+    font-size: 17px;
+}
